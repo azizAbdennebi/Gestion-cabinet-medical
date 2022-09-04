@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-navbar color='light'>
+  <ion-buttons start>
+  <button ion-button icon-only >
+  <ion-icon name="menu" (onclick)="onToggleMenu()"></ion-icon>
+  </button>
+  </ion-buttons>
+  <ion-title *ngIf="mode === 'new'" >Nouvel utilisateur</ion-title>
+  <ion-title *ngIf="mode === 'connect'">Connexion</ion-title>
+  </ion-navbar>
+  </ion-header>
+  <ion-content >
+    <div style="padding:10% ;">
+
+      <ion-row>
+          <ion-col>
+            <div style="margin-top:50px;width:100%;height:100%;align-items:center;">
+              <ion-col>
+                <img src="./assets/img/sante.png" />
+              </ion-col>
+            </div>
+          </ion-col>
+      </ion-row>
+    <ion-row>
+    <form [formGroup]="authForm">
+      <ion-list>
+      <ion-item>
+      <ion-label >Adresse mail</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item margin-top="10px">
+      <ion-label>Mot de passe</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      </ion-list>
+      <button ion-button full style="height:45px; width: 100%;
+      border-radius: 30px;
+      font-size: 0.9em;
+      border: 0px solid #fff;" color='light' (click)="onSubmitForm()">Soumettre</button>
+      <span ion-text color="danger">{{ errorMessage }}</span>
+      </form>
+    </ion-row>
+    </div>
+
+  </ion-content>

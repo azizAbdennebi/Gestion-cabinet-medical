@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+      <ion-icon name="menu"></ion-icon>
+      </button>
+      </ion-buttons>
+    <ion-title>MonCabinet</ion-title>
+    
+  </ion-navbar>
+  
+</ion-header>
+<ion-content padding>
+  <!-- <p>Ici apparaîtra la liste d'appareils</p> -->
+  <button
+    ion-item
+    *ngFor="let consultation of consultationsList"
+    (click)="onLoadPatient(consultation.patient)">
+    <img [src]="consultation.img" alt="heyyyy">
+      {{ consultation.patient.name }}
+    
+  </button>
+  <page-calendrier-consultations >
+
+  </page-calendrier-consultations>
+</ion-content>
+<ion-footer padding>
+  <p>Bas de page</p>
+</ion-footer>

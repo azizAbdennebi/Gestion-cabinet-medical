@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+  <ion-title>Nouvelle consultation</ion-title>
+  </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+  <form [formGroup]="consultationForm">
+  <ion-list>
+  <ion-item-divider>Informations du patient</ion-item-divider>
+  <ion-item>
+  <ion-label>Nom & Prénom</ion-label>
+  <ion-input placeholder="Patient" formControlName="name"></ion-input>
+  </ion-item>
+
+  <ion-item-divider>Description de la consultation</ion-item-divider>
+  <ion-item>
+    <ion-label>Date et Heure</ion-label>
+    <ion-input placeholder="Patient" formControlName="date_heure"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input placeholder="Description" formControlName="description"></ion-input>
+  </ion-item>
+  
+  <!-- <ion-item-divider>Description</ion-item-divider>
+  <div formArrayName="description">
+  <ion-item *ngFor="let control of getDescriptionArray().controls; let i =
+  index"></ion-item>
+  </div> -->
+  </ion-list>
+  </form>
+  </ion-content>
